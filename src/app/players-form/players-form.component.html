@@ -1,0 +1,24 @@
+<div class="container">
+  <h3>Add the players names here:</h3>
+  <form>
+    <fieldset>
+      <input class="form-control" #newHero
+      (keyup.enter)="addHero(newHero.value)"
+      (blur)="addHero(newHero.value); newHero.value='test' "
+      placeholder="Enter player name" >
+
+        <button  type="button" class="addBtn btn btn-outline-secondary" (click)="addHero(newHero.value)">Add Player</button>
+    </fieldset>
+
+    <ul>
+      <li *ngFor="let hero of heroes">
+        <p>
+          {{hero}}
+          <button class="delete btn-outline-secondary" title="delete hero"
+          (click)="delete(hero)">x</button>
+        </p>
+      </li>
+   </ul>
+
+  </form>
+</div>
